@@ -1,0 +1,19 @@
+API phía server :
+- Xem danh sách bãi xe
+- Tìm ki?m bãi xe
+- Xem chi ti?t bãi xe (tên bãi,s? lu?ng xe trong bãi,..)
+- quét QR xe -> nh?p mã xe -> g?i l?i chi ti?t xe 
+- API thuê xe 24h
+- API thuê xe -> tr? l?i tb
+- API thanh toán -> API b?t d?u thuê xe
+- API d?ng xe 
+- API ti?p t?c
+- API tr? xe
+
+Các ch?c nang phía client:
+- Xem danh sách bãi xe
+- TÌm ki?m bãi xe
+- xem chi ti?t xe (nh?p mã xe)
+- Thuê xe
+- D?ng xe - ti?p t?c
+- Tr? xe

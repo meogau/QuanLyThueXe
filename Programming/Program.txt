@@ -11,9 +11,16 @@ API phía server :
 - API tr? xe
 
 Các ch?c nang phía client:
+
 - Xem danh sách bãi xe
-- TÌm ki?m bãi xe
+- TÌm ki?m bãi xe  
 - xem chi ti?t xe (nh?p mã xe)
+-> th?ng
+
 - Thuê xe
 - D?ng xe - ti?p t?c
 - Tr? xe
+-> thái
+
+background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+

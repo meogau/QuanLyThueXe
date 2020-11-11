@@ -1,0 +1,122 @@
+export const bikes = [
+    {
+        "id": 1,
+        "bikeParkingId": 1,
+        "name": "B1",
+        "status": 0,
+        "type": 0,
+        "description": "Mô tả 1",
+        "battery": 99,
+        "value": 100,
+        "bikeParking": null,
+        "bikeRentals": []
+    },
+    {
+        "id": 2,
+        "bikeParkingId": 1,
+        "name": "B2",
+        "status": 0,
+        "type": 0,
+        "description": "Mô tả 1",
+        "battery": 99,
+        "value": 100,
+        "bikeParking": null,
+        "bikeRentals": []
+    },
+    {
+        "id": 3,
+        "bikeParkingId": 1,
+        "name": "B3",
+        "status": 0,
+        "type": 0,
+        "description": "Mô tả 1",
+        "battery": 99,
+        "value": 100,
+        "bikeParking": null,
+        "bikeRentals": []
+    },
+    {
+        "id": 4,
+        "bikeParkingId": 1,
+        "name": "B4",
+        "status": 0,
+        "type": 1,
+        "description": "Mô tả 1",
+        "battery": null,
+        "value": 100,
+        "bikeParking": null,
+        "bikeRentals": []
+    },
+    {
+        "id": 5,
+        "bikeParkingId": 1,
+        "name": "B5",
+        "status": 0,
+        "type": 1,
+        "description": "Mô tả 1",
+        "battery": null,
+        "value": 100,
+        "bikeParking": null,
+        "bikeRentals": []
+    },
+    {
+        "id": 6,
+        "bikeParkingId": 1,
+        "name": "B6",
+        "status": 0,
+        "type": 1,
+        "description": "Mô tả 1",
+        "battery": null,
+        "value": 100,
+        "bikeParking": null,
+        "bikeRentals": []
+    },
+    {
+        "id": 7,
+        "bikeParkingId": 1,
+        "name": "B7",
+        "status": 0,
+        "type": 2,
+        "description": "Mô tả 1",
+        "battery": null,
+        "value": 100,
+        "bikeParking": null,
+        "bikeRentals": []
+    },
+    {
+        "id": 8,
+        "bikeParkingId": 1,
+        "name": "B8",
+        "status": 0,
+        "type": 2,
+        "description": "Mô tả 1",
+        "battery": null,
+        "value": 100,
+        "bikeParking": null,
+        "bikeRentals": []
+    },
+    {
+        "id": 9,
+        "bikeParkingId": 1,
+        "name": "B9",
+        "status": 0,
+        "type": 2,
+        "description": "Mô tả 1",
+        "battery": null,
+        "value": 100,
+        "bikeParking": null,
+        "bikeRentals": []
+    },
+    {
+        "id": 10,
+        "bikeParkingId": 1,
+        "name": "B10",
+        "status": 0,
+        "type": 2,
+        "description": "Mô tả 1",
+        "battery": null,
+        "value": 100,
+        "bikeParking": null,
+        "bikeRentals": []
+    }
+]

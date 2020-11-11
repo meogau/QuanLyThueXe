@@ -29,3 +29,106 @@
   width: 16vw;
   height: 12vw;
 }
+
+.li-section-bikeparks , .li-section-bike {
+  width: 80px;
+}
+
+.list-style-none {
+  list-style-type: none;
+}
+
+ul.ul-parkinfo {
+  padding-inline-start: 0px;
+}
+
+.display-flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.display-flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.mapmarker-img {
+  width: 18px;
+  height: 20px;
+}
+
+.one-park-content {
+  border: solid 1px black;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.background-color-aaa {
+  background-color: #cfd9df;
+}
+
+.bikepark-wrapper {
+  box-shadow: 5px 10px 8px #888;
+}
+
+.bikepark-title {
+  box-shadow: 5px 10px 8px #888;
+}
+
+.one-park-header:hover {
+  cursor: pointer;
+}
+
+.mapmarker-img-big {
+  width: 35px;
+  height: 35px;
+}
+
+#bike-img {
+  width: 200px;
+  height: 150px;
+}
+
+.filter-btn:hover {
+  cursor: pointer;
+  background-color: white;
+}
+
+@media only screen and (max-width: 880px){
+  .hide-on-small-view {
+    display: none;
+  }
+  .filter-select {
+    display: block;
+    margin-left: 16px;
+    margin-top: 8px;
+  }
+  .filter {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 650px){
+  .flex-row-from-medium {
+    display: flex;
+    flex-direction: row;
+  }
+  .qrcode-input-area {
+    margin-left: 20px;
+  }
+}
+
+@media only screen and (min-width: 880px){
+  .qrcode-input {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+  .filter {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 16px;
+  }
+  .filter-select {
+    display: none;
+  }
+}

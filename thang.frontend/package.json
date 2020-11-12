@@ -24,6 +24,7 @@
       "react-app/jest"
     ]
   },
+  "proxy": "http://103.141.138.66:51563/EcoBikeRentalWebAPI/api/",
   "browserslist": {
     "production": [
       ">0.2%",

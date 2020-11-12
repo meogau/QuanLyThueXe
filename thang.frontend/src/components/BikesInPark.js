@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import SearchBar from '../components/general/Search';
 import Header from '../components/general/Header';
-import { bikes } from '../components/test/bikes';
+// import { bikes } from '../components/test/bikes';
 import map_maker from '../images/map-marker.webp';
 import logo from 'D:\\20201\\TKXDPM\\thang.frontend\\thang.frontend\\src\\images\\EZ_E-Bike_logo.png';
+import {api} from '../api/api';
 
 const selected_type_style = {
     backgroundColor: "white"
@@ -12,22 +13,32 @@ const unselected_type_style = {
     backgroundColor: "inherit"
 }
 const park = {
+    address: "KTX bach Khoa Ha Noi",
     name: "Park 01"
 }
 
 class Bikes extends Component {
     state = {
-        displayBikes: [...bikes],
-        selectedType: -1
+        displayBikes: [],
+        selectedType: -1,
+        bikes: []
+    }
+    componentDidMount(){
+        api.getBikesInPark(this.props.match.params.parkID,(bikes) => {
+            this.setState({
+                bikes: [...bikes],
+                displayBikes: [...bikes]
+            })
+        })
     }
     onFilter = (type) => {
         if (type >= 0)
             this.setState({
-                displayBikes: bikes.filter(bike => bike.type === type),
+                displayBikes: this.state.bikes.filter(bike => bike.type === type),
                 selectedType: type
             })
         else this.setState({
-            displayBikes: [...bikes],
+            displayBikes: [...this.state.bikes],
             selectedType: -1
         })
     }
@@ -35,11 +46,11 @@ class Bikes extends Component {
         let type = parseInt(e.target.value);
         if (type >= 0)
             this.setState({
-                displayBikes: bikes.filter(bike => bike.type === type),
+                displayBikes: this.state.bikes.filter(bike => bike.type === type),
                 selectedType: type
             })
         else this.setState({
-            displayBikes: [...bikes],
+            displayBikes: [...this.state.bikes],
             selectedType: -1
         })
     }
@@ -72,6 +83,9 @@ class Bikes extends Component {
                                 <button className="btn btn-outline-primary">Thue xe</button>
                             </div>
                         </div>
+                    </div>
+                    <div className="park-address text-center">
+                        <h3>Tram xe {this.props.match.params.parkName}</h3>
                     </div>
                     <div className="display-flex-wrap">
                         {

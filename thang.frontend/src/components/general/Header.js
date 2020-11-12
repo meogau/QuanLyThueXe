@@ -6,10 +6,10 @@ class HeaderWithSearch extends Component {
         return (
             <div className="row container-fluid header-container m-0">
                 <div className="col-md-1 text-center pt-4 show-on-md">
-                    <a href="#">Home</a>
+                    <a href="/">Home</a>
                 </div>
                 <div className="col-md-2 text-center  pt-4 show-on-md">
-                    <a href="#">Bike Parks</a>
+                    <a href="/bikeparks">Bike Parks</a>
                 </div>
                 <div className="col-md-2 text-center pt-4 show-on-md">
                     <a href="#">Return bike</a>

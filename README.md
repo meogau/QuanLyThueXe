@@ -1,6 +1,7 @@
 # TKXDPM.20201-Group16
 
-## RequirementAnalysis
+# RequirementAnalysis
+## Tasks
 - Vẽ biểu đồ UC chung cho bài toán
 - Đặc tả các UC
 - Viết tài liệu mô tả yêu cầu phần mềm SRS theo mẫu
@@ -26,8 +27,8 @@
 * Nguyễn Đức Thắng: ✅ finish
 * Nguyễn Văn Thái:  ✅ finish
 
-
-## ArchitecturalDesign
+# ArchitecturalDesign
+## Tasks 
 - Vẽ biểu đồ trình tự cho các UC 
 - Thiết kế sơ đồ lớp cho các UC 
 - Thiết kế sơ đồ lớp tổng quan cho toàn chương trình
@@ -48,8 +49,8 @@
 * Nguyễn Đức Thắng: ✅ finish
 * Nguyễn Văn Thái:  ✅ finish
 
-
-## InterfaceDesign
+# InterfaceDesign
+## Tasks 
 - Thiết kế các màn hình cho hệ thống
 ## Contributions
 * Phạm Thị Thảo:
@@ -63,8 +64,8 @@
 * Nguyễn Văn Thái:  ✅ finish
 * Nguyễn Đức Thắng: ✅ finish
 
-## Thiết kế CSDL
-
+# Thiết kế CSDL
+## Tasks 
 - Thiết kế CDSL hệ thống
 ## Contributions
 * Phạm Thị Thảo:

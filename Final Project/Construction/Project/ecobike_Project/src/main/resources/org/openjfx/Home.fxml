@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.HomeController">
+   <children>
+      <ImageView fitHeight="399.0" fitWidth="534.0" layoutX="80.0" layoutY="36.0" opacity="0.84" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/EZ_E-Bike_logo.png" />
+         </image>
+      </ImageView>
+      <VBox alignment="CENTER" layoutX="650.0" layoutY="36.0" prefHeight="400.0" prefWidth="320.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="387.0" text="EcoBike Rental" textFill="#f68084">
+               <font>
+                  <Font name="Bauhaus 93" size="39.0" />
+               </font>
+            </Label>
+            <Label contentDisplay="CENTER" prefHeight="226.0" prefWidth="320.0" text="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters" textFill="#fab905" wrapText="true">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+            <Button fx:id="viewParksBtn" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#goToViewListBike" style="-fx-background-color: #4B8A08 #4B8A08 #4B8A08; -fx-background-radius: 15px;" text="View Bike Parks now" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="19.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </VBox>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1000.0" />
+   </children>
+</AnchorPane>

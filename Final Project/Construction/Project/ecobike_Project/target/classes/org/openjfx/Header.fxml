@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.HeaderController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1000.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="1000.0">
+               <children>
+                  <ImageView fitHeight="100.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/logo.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets top="15.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <ButtonBar fx:id="buttonBar" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="292.0">
+                     <buttons>
+                        <Button fx:id="homeBtn" alignment="CENTER" mnemonicParsing="false" prefWidth="120.0" style="-fx-background-color: #4B8A08; -fx-background-radius: 15px;" text="Home" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold Italic" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="parkBtn" alignment="CENTER" layoutX="135.0" layoutY="18.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="169.0" style="-fx-background-color: #4B8A08; -fx-background-radius: 15px;" text="Bike Parks" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold Italic" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </buttons>
+                     <padding>
+                        <Insets right="15.0" />
+                     </padding>
+                  </ButtonBar>
+                  <Pane prefHeight="100.0" prefWidth="483.0">
+                     <children>
+                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="104.0" layoutY="29.0" mnemonicParsing="false" onAction="#goToEnterBikeCode" prefHeight="37.0" prefWidth="320.0" style="-fx-background-color: #4B8A08; -fx-border-radius: 15px; -fx-background-radius: 15px;" text="Tìm kiếm xe bằng mã xe" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </Pane>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

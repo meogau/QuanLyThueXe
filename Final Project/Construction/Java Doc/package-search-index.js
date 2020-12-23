@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"org.openjfx","l":"API"},{"m":"org.openjfx","l":"controller"},{"m":"org.openjfx","l":"dataAccess.DAO"},{"m":"org.openjfx","l":"dataAccess.entities"},{"m":"org.openjfx","l":"DTO"},{"m":"org.openjfx","l":"org.openjfx"}];updateSearchResults();

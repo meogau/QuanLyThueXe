@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.ViewElectricBikeController">
+   <children>
+      <Label alignment="CENTER" layoutY="20.0" prefHeight="51.0" prefWidth="1000.0" text="Xem thông tin xe" textFill="#1b8d02">
+         <font>
+            <Font name="Bauhaus 93" size="25.0" />
+         </font>
+      </Label>
+      <VBox alignment="CENTER" layoutX="100.0" layoutY="83.0" prefHeight="362.0" prefWidth="439.0">
+         <children>
+            <ImageView fx:id="image" fitHeight="267.0" fitWidth="347.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/electric_bike_background.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="487.0" text="Xe dap dien don">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Label>
+            <Button fx:id="rentBike" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#handleRentBikeAction" style="-fx-background-color: #4B8A08 #4B8A08 #4B8A08 #4B8A08; -fx-background-radius: 15px;" text="Thuê xe ngay" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="19.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <Label layoutX="600.0" layoutY="100.0" text="Tên xe:">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="600.0" layoutY="150.0" text="Mã xe:">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="600.0" layoutY="200.0" text="Pin:">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="600.0" layoutY="250.0" text="Mô tả:">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="600.0" layoutY="350.0" text="Giá cọc:">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="name" layoutX="775.0" layoutY="100.0" text="Hai Ba Trung">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="bikeCode" layoutX="775.0" layoutY="151.0" text="Xe dap dien don">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="pin" layoutX="775.0" layoutY="201.0" text="XDD001">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="description" layoutX="775.0" layoutY="250.0" prefHeight="84.0" prefWidth="199.0" text="nằm cách trung tâm Hà Nội khoảng 13-14 km về phía Đông Nam" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="pilePrice" layoutX="775.0" layoutY="351.0" text="100.000 VND">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="600.0" layoutY="404.0" text="Giá thuê xe:">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="775.0" layoutY="404.0" text="10.000">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="875.0" layoutY="409.0" text="VNĐ/H">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="600.0" layoutY="445.0" text="Trạng thái:">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="status" layoutX="775.0" layoutY="445.0" text="10.000" textFill="#e36514">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

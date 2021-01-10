@@ -1,7 +1,7 @@
 package org.openjfx;
 
-import controller.BikeController;
-import dataAccess.entities.Bike;
+import dataAccess.entities.ElectricBike;
+import dataAccess.entities.StandBike;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -12,11 +12,9 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
-public class ViewBikeController extends AbstractNode{
+public class ViewStandBikeController extends AbstractNode{
     @FXML
     private Label name;
-    @FXML
-    private Label pin;
     @FXML
     private Label description;
     @FXML
@@ -28,21 +26,15 @@ public class ViewBikeController extends AbstractNode{
     @FXML
     private ImageView image;
 
-    private BikeController bikeController;
+    private StandBike standBike;
 
-    // private AnchorPane mainPane;
-
-    private int bikeId;
     @FXML
     private Button rentBike;
 
-//    public void setMainPane(AnchorPane mainPane) {
-//        this.mainPane = mainPane;
-//    }
 
-    public ViewBikeController() {
+    public ViewStandBikeController() {
         name= new Label();
-        pin = new Label();
+
         description = new Label();
         pilePrice = new Label();
         status = new Label();
@@ -51,10 +43,9 @@ public class ViewBikeController extends AbstractNode{
         rentBike = new Button("Thuê xe ngay");
     }
 
-    public void initData(Bike  bike){
-        this.bikeId = bike.getId();
+    public void initData(StandBike bike){
+        this.standBike = bike;
         name.setText(bike.getName());
-        pin.setText(String.valueOf(bike.getBattery()));
         description.setText(bike.getDescription());
         pilePrice.setText(String.valueOf(bike.getPrice()*0.6));
         image.setImage(new Image(bike.getImage()));
@@ -73,9 +64,8 @@ public class ViewBikeController extends AbstractNode{
         );
 
         AnchorPane paymentPane = loader.load();
-        ((PaymentScreenController) loader.getController()).setMainPane(getMainPane());
-        ((PaymentScreenController) loader.getController()).setBikeId(bikeId);
-        // System.out.println(getMainPane() == null);
+      ((PaymentScreenController) loader.getController()).setMainPane(getMainPane());
+      ((PaymentScreenController) loader.getController()).setBike(this.standBike);
         getMainPane().getChildren().clear();
         getMainPane().getChildren().add(paymentPane);
         getMainPane().getScene().getWindow().setHeight(paymentPane.getHeight());

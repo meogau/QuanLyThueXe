@@ -7,61 +7,61 @@ import dataAccess.DAO.RentalDAO;
 import dataAccess.entities.Bike;
 import dataAccess.entities.Card;
 import dataAccess.entities.Rental;
+import dataAccess.entities.StandBike;
 
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.sql.Timestamp;
+import java.sql.SQLException;
 
 public class RentBikeController {
 
     private static RentalDAO rentalDAO = new RentalDAO();
     private static BikeDAO bikeDAO = new BikeDAO();
     private PaymentController paymentController = new PaymentController();
+    private BikePayment bikePayment;
 
-    public  int rentBikeProcess(int bikeId , Card card) throws IOException {
-        Bike bike = bikeDAO.getBikeById(bikeId);
-        //check bike exist
-        if (bike.equals(null)) return Config.BIKE_NULL;
-        //check bike ready or not
-        if (bikeDAO.getBikeStatus(bikeId) == 1) return Config.BIKE_HAS_BEEN_RENTED;
+    public void setBikePayment(BikePayment bikePayment) {
+        this.bikePayment = bikePayment;
+    }
+
+    public  int rentBikeProcess(Bike bike , Card card) throws IOException {
+
+        if (bike.getStatus() == 1) return Config.BIKE_HAS_BEEN_RENTED;
         //rent bike
-        BigDecimal amount = caculateDeposit(bike);
+        bikePayment.setBike(bike);
+        BigDecimal amount = bikePayment.caculateDeposit();
         int cardId =  paymentController.processPay(card,amount);
         if(cardId!=0){
-        	System.out.println("vao day --------------");
             //create Rental
-            int rentailId= rentalDAO.createRental(bikeId,cardId);
+            int rentailId= rentalDAO.createRental(bike.getId(),cardId);
             //update bike status
-            bikeDAO.updateStatus(bikeId,1);
+           bikeDAO.updateBikeStatus(bike,1);
             return rentailId;
         }
         else {
             return 0;
-        }
+       }
     }
 
-    public Bike getBikeRental(int rentalId){
+    public Bike getBikeRental(int rentalId) throws SQLException {
         Rental rental = rentalDAO.findRentalById(rentalId);
-        return bikeDAO.getBikeById(rental.getBikeId());
-    }
-    public BigDecimal caculateDeposit(Bike bike){
-        float deposit = (float) (bike.getPrice()*0.4);
-        if(bike.getType()==1) return BigDecimal.valueOf(deposit);
-        else return BigDecimal.valueOf((deposit*1.5));
+        return bikeDAO.findBikeById(rental.getBikeId());
     }
 
 
 
-    public RentalInformation returnBike(int rentalId) throws IOException {
+
+    public RentalInformation returnBike(int rentalId) throws IOException, SQLException {
         rentalDAO.endRentalBike(rentalId);
 
         //get bike and rental
         Rental rental = rentalDAO.findRentalById(rentalId);
-        Bike bike = bikeDAO.getBikeById(rental.getBikeId());
+        Bike bike = bikeDAO.findBikeById(rental.getBikeId());
+        bikePayment.setBike(bike);
         //caculate fee
-        BigDecimal rentalFee = caculateRentalFee(bike.getType(),rental.getStartTime(),rental.getEndTime());
+        BigDecimal rentalFee = bikePayment.caculateFee(rental.getStartTime(),rental.getEndTime());
         //caculate refund
-        BigDecimal deposit = caculateDeposit(bike);
+        BigDecimal deposit = bikePayment.caculateDeposit();
         float refund =0f;
         boolean refundStatus = false;
         if(deposit.floatValue()>rentalFee.floatValue()){
@@ -75,8 +75,7 @@ public class RentBikeController {
         //refund money
             paymentController.processRefund(rental.getCardId(),BigDecimal.valueOf(refund),refundStatus);
         // update bike status
-        bikeDAO.updateStatus(bike.getId(),0);
-
+        bikeDAO.updateBikeStatus(bike,0);
         //return data
         RentalInformation rentalInformation = new RentalInformation();
         rentalInformation.setDeposit(deposit);
@@ -86,25 +85,7 @@ public class RentBikeController {
         return rentalInformation;
     }
 
-    public BigDecimal caculateRentalFee(int bikeType , Timestamp timeStart, Timestamp timeEnd){
-        Long timeUsing = Math.abs(timeStart.getTime() - timeEnd.getTime())/(60*1000);
-        System.out.println("Using time = " + timeUsing);
-        Float result = null;
-        if(timeUsing <= 10) {
-            result = 0.0f;
-        }
-        else if(timeUsing > 10 && timeUsing <= 30){
-            result = 10000.0f;
-        }else if(timeUsing > 30){
-            Integer extra = (int) Math.ceil((timeUsing - 30) / 15.0f);
-            result = 10000.0f + 3000.0f * extra;
-        }
 
-        if (bikeType!=1) {
-            result *= 1.5f;
-        }
-        return BigDecimal.valueOf(result);
-    }
 
 
 }

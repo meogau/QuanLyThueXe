@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<HBox alignment="CENTER_LEFT" prefHeight="180.0" prefWidth="382.0" style="-fx-background-radius: 15px;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.OneBikeScreenController">
+<HBox alignment="CENTER_LEFT" prefHeight="180.0" prefWidth="382.0" style="-fx-background-radius: 15px;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.OneElectricBikeScreenController">
     <children>
         <ImageView fx:id="image" fitHeight="126.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true">
             <image>
@@ -22,7 +22,7 @@
         </ImageView>
         <Pane prefHeight="180.0" prefWidth="273.0">
             <children>
-                <Label layoutX="15.0" layoutY="14.0" text="Tên xe :">
+                <Label layoutX="15.0" layoutY="14.0" text="Loại xe :">
                     <font>
                         <Font name="System Bold Italic" size="12.0" />
                     </font>
@@ -42,16 +42,19 @@
                         <Font name="System Bold Italic" size="12.0" />
                     </font>
                 </Label>
-                <Button layoutY="136.0" mnemonicParsing="false" onAction="#viewBike" prefWidth="180.0" style="-fx-background-color: #4B8A08; -fx-background-radius: 15px;" text="Xem chi tiết xe" textFill="WHITE">
+                <Button layoutY="136.0" mnemonicParsing="false" onAction="#viewBike" prefWidth="180.0" style="-fx-background-color: #0594ab; -fx-background-radius: 15px;" text="Xem chi tiết xe" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
                <font>
                   <Font name="System Bold" size="14.0" />
                </font></Button>
-                <Label fx:id="parkName" alignment="TOP_LEFT" layoutX="90.0" layoutY="14.0" prefHeight="35.0" prefWidth="109.0" text="Xe dap dien don" wrapText="true" />
+                <Label fx:id="parkName" alignment="TOP_LEFT" layoutX="90.0" layoutY="14.0" prefHeight="35.0" prefWidth="109.0" text="Xe đạp điện" textFill="#0594ab" wrapText="true">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Label>
                 <Label fx:id="numOfBikes" layoutX="90.0" layoutY="45.0" text="Xe dap dien don" />
-                <Label fx:id="address" layoutX="114.0" layoutY="73.0" prefHeight="17.0" prefWidth="142.0" text="San sang" />
+                <Label fx:id="battery" layoutX="114.0" layoutY="73.0" prefHeight="17.0" prefWidth="142.0" text="San sang" />
                 <Label fx:id="status" layoutX="89.0" layoutY="101.0" text="200.000 VND" />
             </children>
         </Pane>

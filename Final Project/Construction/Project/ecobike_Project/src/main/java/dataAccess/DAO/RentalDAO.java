@@ -29,7 +29,7 @@ public class RentalDAO extends BaseDAO{
 
     public int createRental(int bikeId,int cardId){
         Calendar calendar = Calendar.getInstance();
-
+        System.out.println(bikeId);
         Timestamp startDate = new Timestamp(System.currentTimeMillis());
         int bikeRentalId =0;
         String query = " insert into Rental ( BikeId, Status, StartTime,CardId)"

@@ -6,20 +6,16 @@ public class Bike {
     private int bikeParkingId;
     private String name;
     private int status;
-    private int type;
     private String description;
-    private float battery;
     private float price;
     private String image;
 
-    public Bike(int id, int bikeParkingId, String name, int status, int type, String description, float battery, float price) {
+    public Bike(int id, int bikeParkingId, String name, int status, String description, float price) {
         this.id = id;
         this.bikeParkingId = bikeParkingId;
         this.name = name;
         this.status = status;
-        this.type = type;
         this.description = description;
-        this.battery = battery;
         this.price = price;
     }
     public Bike() {
@@ -65,34 +61,12 @@ public class Bike {
         this.status = status;
     }
 
-    public int getType() {
-        return type;
-    }
-
-    @Override
-	public String toString() {
-		return "Bike [id=" + id + ", bikeCode=" + bikeCode + ", bikeParkingId=" + bikeParkingId + ", name=" + name
-				+ ", status=" + status + ", type=" + type + ", description=" + description + ", battery=" + battery
-				+ ", price=" + price + ", image=" + image + "]";
-	}
-	public void setType(int type) {
-        this.type = type;
-    }
-
     public String getDescription() {
         return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public float getBattery() {
-        return battery;
-    }
-
-    public void setBattery(float battery) {
-        this.battery = battery;
     }
 
     public float getPrice() {

@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.ViewBikeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.ViewStandBikeController">
    <children>
-      <Label alignment="CENTER" layoutY="20.0" prefHeight="51.0" prefWidth="1000.0" text="Xem thông tin xe" textFill="#1b8d02">
+      <Label alignment="CENTER" layoutY="20.0" prefHeight="51.0" prefWidth="1000.0" text="Xem thông tin xe" textFill="#036a8c">
          <font>
             <Font name="Bauhaus 93" size="25.0" />
          </font>
@@ -23,7 +23,7 @@
                   <Image url="@../../images/electric_bike_background.png" />
                </image>
             </ImageView>
-            <Label alignment="CENTER" prefHeight="17.0" prefWidth="487.0" text="Xe dap dien don">
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="487.0" text="Xe đạp đơn">
                <font>
                   <Font name="System Bold Italic" size="15.0" />
                </font>
@@ -46,12 +46,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="600.0" layoutY="150.0" text="Mã xe:">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="600.0" layoutY="200.0" text="Pin:">
+      <Label layoutX="602.0" layoutY="186.0" text="Mã xe:">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -61,7 +56,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="600.0" layoutY="350.0" text="Giá cọc:">
+      <Label layoutX="598.0" layoutY="324.0" text="Giá cọc:">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -71,37 +66,32 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="bikeCode" layoutX="775.0" layoutY="151.0" text="Xe dap dien don">
+      <Label fx:id="bikeCode" layoutX="775.0" layoutY="186.0" text="Xe dap dien don">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="pin" layoutX="775.0" layoutY="201.0" text="XDD001">
+      <Label fx:id="description" layoutX="779.0" layoutY="247.0" prefHeight="34.0" prefWidth="199.0" text="xe dopn ok" wrapText="true">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="description" layoutX="775.0" layoutY="250.0" prefHeight="84.0" prefWidth="199.0" text="nằm cách trung tâm Hà Nội khoảng 13-14 km về phía Đông Nam" wrapText="true">
+      <Label fx:id="pilePrice" layoutX="776.0" layoutY="324.0" text="100.000 VND">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="pilePrice" layoutX="775.0" layoutY="351.0" text="100.000 VND">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="600.0" layoutY="404.0" text="Giá thuê xe:">
+      <Label layoutX="596.0" layoutY="391.0" text="Giá thuê xe:">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="775.0" layoutY="404.0" text="10.000">
+      <Label layoutX="775.0" layoutY="396.0" text="10.000">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="875.0" layoutY="409.0" text="VNĐ/H">
+      <Label layoutX="878.0" layoutY="401.0" text="VNĐ/H">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

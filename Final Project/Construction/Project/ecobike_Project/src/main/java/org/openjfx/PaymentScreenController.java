@@ -1,11 +1,17 @@
 package org.openjfx;
 
+
+import controller.ElectricBikePayment;
 import controller.RentBikeController;
+import controller.StandBikePayment;
+import dataAccess.entities.Bike;
 import dataAccess.entities.Card;
+import dataAccess.entities.ElectricBike;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import org.w3c.dom.ls.LSOutput;
 
 import java.io.IOException;
 
@@ -19,9 +25,13 @@ public class PaymentScreenController extends AbstractNode {
 	@FXML
 	private TextField expirationDate;
 
-	private int bikeId;
+	private Bike bike;
 
-	private RentBikeMessageController rentBikeMessageController = new RentBikeMessageController();
+    public void setBike(Bike bike) {
+        this.bike = bike;
+    }
+
+    private RentBikeMessageController rentBikeMessageController = new RentBikeMessageController();
 
 	private RentBikeController rentBikeController = new RentBikeController();
 
@@ -32,15 +42,17 @@ public class PaymentScreenController extends AbstractNode {
 		card.setCardNumber(cardNumber.getText());
 		card.setSecurityCode(securityCode.getText());
 		card.setExpirationDate((expirationDate.getText()));
-		System.out.println(bikeId);
-		int rentalId = rentBikeController.rentBikeProcess(bikeId, card);
+		//setbikePayment
+		if(bike instanceof ElectricBike) rentBikeController.setBikePayment(new ElectricBikePayment());
+		else rentBikeController.setBikePayment(new StandBikePayment());
+	    int rentalId = rentBikeController.rentBikeProcess(bike, card);
 		if (rentalId > 0) {
 			System.out.println("thue xe thanh cong");
 			// show man hinh thue xe
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("RentBike.fxml"));
-			
 			AnchorPane pane = loader.load();
 			((RentBikeSuccessController) loader.getController()).setRentalID(rentalId);
+			((RentBikeSuccessController) loader.getController()).setBikeRental(this.bike);
 			((RentBikeSuccessController) loader.getController()).setMainPane(getMainPane());
 			getMainPane().getChildren().clear();
 			getMainPane().getChildren().add(pane);
@@ -50,9 +62,7 @@ public class PaymentScreenController extends AbstractNode {
 
 	}
 
-	public void setBikeId(int bikeId) {
-		this.bikeId = bikeId;
-	}
+
 
 	@FXML
 	private void backBtn() {
@@ -78,7 +88,7 @@ public class PaymentScreenController extends AbstractNode {
 
 	@FXML
 	private void goToSuccessScreen() throws Exception {
-		
+
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("MessageForSuccessPayment.fxml"));
 		AnchorPane pane = loader.load();
 //        ((HomeController) homeLoader.getController()).setMainPane(getMainPane());

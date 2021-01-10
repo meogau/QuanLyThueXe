@@ -60,28 +60,17 @@ public class PaymentController {
 				// save card and update status
 				int cardId = 0;
 				if (!cardExist) {
-					System.out.println("Card chua co trong db");
 					cardId = cardDAO.createCard(card.getCardNumber(), card.getCardHolder(), card.getExpirationDate(),
 							card.getSecurityCode());
 				} else {
 					cardId = cardDAO.findCardByCardNumber(card.getCardNumber()).getId();
 				}
 				cardDAO.updateCardStatus(card.getCardNumber(), 1);
-
 				// save transaction
 				transactionDAO.saveTransaction(cardId, amount, Config.PROCESS_PAY);
-
-				// anouceController.show();
-				
 				return cardId;
 			} else if (errorCode.equals("01")) {
 				dialog = new Dialog("Error", "The khong hop le", AlertType.INFORMATION) {
-
-//					@Override
-//					public void doSomething() {
-//						// TODO Auto-generated method stub
-//
-//					}
 				};
 				dialog.show();
 			} else if (errorCode.equals("02")) {
